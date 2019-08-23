@@ -1,9 +1,16 @@
-This is a game for the µGame game console, based on the classic Space Invaders
-arcade game.
+This is a game for the M5Stack Faces Kit which was originally designed for the 
+µGame game console, based on the classic Space Invaders arcade game.
 
-Note that because of memory requirements, you should copy the game.mpy and not
-the game.py file onto the device. This is a compiled version of the same
-program, and it takes less memory to load.
+It was built using the Stage - Tile and Sprite Library created by dehsipu https://github.com/deshipu
 
-Future version will probably be better optimized and will be able to run the
-uncompiled version directly, but for now there is this workaround.
+To play, first flash the micropython.bin file to the M5Stack with esptool
+
+Use a tool such as Ampy https://github.com/pycampers/ampy or the M5Stack plugin https://www.youtube.com/watch?v=Y9pOWgsNgKk 
+for VScode to copy the remaining files to the flash partition of the device.
+
+Run the game by renaming the game.py file to main.py and reset or with the ampy command
+(replace port name with /dev/tty.SLAB_USBtoUART for MAC, com port for windows or /dev/ttyUSB0 on linux)
+
+ampy --port "port name" run game.py
+
+The game is a little unstable and doesn't fill the whole screen, I will fix this once I figure out how to.
